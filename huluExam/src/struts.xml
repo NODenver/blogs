@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	
+		<!--设置上传文件大小  -->
+		<!-- <constant name="struts.multipart.maxSize" value="209715200"></constant> -->
+		
+		
+		<package name="demo1" extends="struts-default" namespace="/">
+			<action name="student_*" class="studentAction" method="{1}">
+				<result name="loginsuccess">/main.jsp</result>
+				<result name="login">/index.jsp</result>
+				<!-- 到修改密码页面 -->
+				<result name="success">/main.jsp</result>
+				<result name="afterUpdatePassword">/main.jsp</result>
+				<result name="studentList">/main.jsp</result>
+				<result name="moreCondition">/main.jsp</result>
+				<result name="update" type="redirectAction">student_moreCondition</result>
+				<result name="deleteStudent" type="redirectAction">student_moreCondition</result>
+				<result name="saveStudent"  type="redirectAction">student_moreCondition</result>
+				
+			</action>
+			<action name="manage_*" class="manageAction" method="{1}">
+				<result name="loginsuccess">/main.jsp</result>
+				<result name="login">/index2.jsp</result>
+				
+			</action>
+			
+			<action name="paper_*" class="paperAction" method="{1}">
+				<result name="success">/main.jsp</result>
+				<result name="paperList">/main.jsp</result>
+				<result name="savePaper" type="redirectAction">paper_paperList</result>
+				<result name="deletePaper" type="redirectAction">paper_paperList</result>
+				<result name="addPaper" type="redirectAction">paper_paperList</result>
+			</action>
+			
+			<action name="question_*" class="questionAction" method="{1}">
+				<result name="success">/main.jsp</result>
+				<result name="questionList">/main.jsp</result>
+				<result name="saveQuestion" type="redirectAction">question_questionList</result>
+				<result name="updateQuestion" type="redirectAction">question_questionList</result>
+				<result name="deleteQuestion" type="redirectAction">question_questionList</result>
+				<result name="condition">/main.jsp</result>
+			</action>
+			
+			<action name="exam_*" class="examAction" method="{1}">
+				<result name="success">/main.jsp</result>
+				<result name="moreCondition">/main.jsp</result>
+			</action>
+			
+		</package>
+		
+	</struts>
+
+	<!-- class属性里面不写action全路径了，因为写action对象创建两次
+				写spring配置action的bean的ID值
+			 -->

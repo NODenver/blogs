@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.xj.entity">
+    	<class name="com.xj.entity.Exam" table="t_exam">
+    		<id name="id" column="id">
+    			<generator class="native"></generator>
+    		</id>
+    		<property name="singleScore" column="singleScore"></property>
+    		<property name="moreScore" column="moreScore"></property>
+    		<property name="score" column="score"></property>
+    		<property name="examDate" column="examDate"></property>
+    		
+    		<many-to-one name="paper" class="com.xj.entity.Paper" column="paperId" fetch="join" lazy="false"></many-to-one>
+    		<many-to-one name="student" class="com.xj.entity.Student" column="studentId" fetch="join" lazy="false"></many-to-one>
+    	</class>
+    </hibernate-mapping>

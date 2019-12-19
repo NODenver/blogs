@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.xj.entity">
+    	<class name="com.xj.entity.Manage" table="t_manage">
+    		<id name="mid" column="mid">
+    			<generator class="native"></generator>
+    		</id>
+    		<property name="stuname" column="stuname"></property>
+    		<property name="mpassword" column="mpassword"></property>
+    		
+    		
+    		
+    		
+    		
+    	</class>
+    </hibernate-mapping>

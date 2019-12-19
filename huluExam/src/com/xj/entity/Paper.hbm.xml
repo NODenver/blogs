@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.xj.entity">
+    	<class name="com.xj.entity.Paper" table="t_paper">
+    		<id name="id" column="id">
+    			<generator class="native"></generator>
+    		</id>
+    		<property name="paperName" column="paperName"></property>
+    		<property name="joinDate" column="joinDate"></property>
+    		
+    		<set name="setQuestion" inverse="true" cascade="delete">
+    			<key column="paperId"></key>
+    			<one-to-many class="com.xj.entity.Question"/>
+    		</set>
+    		<set name="setExam" inverse="true" cascade="delete">
+    			<key column="paperId"></key>
+    			<one-to-many class="com.xj.entity.Exam"/>
+    		</set>
+    		
+    		
+    	</class>
+    </hibernate-mapping>

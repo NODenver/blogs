@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+		<session-factory>
+		    <!-- 数据库操作 -->
+			<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+			<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/springjdbc?characterEncoding=utf8</property>
+			<property name="hibernate.connection.username">root</property>
+			<property name="hibernate.connection.password">123456</property> -->
+			
+			<!-- sql 语句操作 -->
+			<property name="hibernate.show_sql">true</property>
+			<property name="hibernate.format_sql">true</property>
+			<property name="hibernate.hbm2ddl.auto">update</property>
+			
+			<!-- mysql方言 -->
+			<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+			
+			<!-- 在hibernate核心文件中配置 -->
+			<!-- <property name="hibernate.current_session_context_class">thread</property> -->
+			
+			<!-- 配置文件的映射 -->
+			<mapping resource="com/xj/entity/Student.hbm.xml"/>
+			<mapping resource="com/xj/entity/Manage.hbm.xml"/>
+			<mapping resource="com/xj/entity/Paper.hbm.xml"/>
+			<mapping resource="com/xj/entity/Question.hbm.xml"/>
+			<mapping resource="com/xj/entity/Exam.hbm.xml"/>
+		</session-factory>
+	</hibernate-configuration>
